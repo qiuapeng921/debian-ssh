@@ -1,5 +1,3 @@
-# debian-ssh
-
 ### 基于官方最新版bebian 实现远程ssh登陆
 
 ### 用户:root 密码:123456
