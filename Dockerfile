@@ -19,6 +19,6 @@ RUN set -ex \
     && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
     && echo alias ll='ls -la' >> .bashrc
 
-EXPOSE 1022
+EXPOSE 1022 80 443 3306 6379
 
 ENTRYPOINT ["/usr/sbin/sshd","-D"]
