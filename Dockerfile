@@ -16,8 +16,10 @@ RUN set -ex \
     && cat .ssh/id_rsa.pub >> .ssh/authorized_keys \
     && echo "root:123456" | chpasswd \
     && sed -i 's/#Port 22/Port 1022/' /etc/ssh/sshd_config \
-    && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+    && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
+    && echo alias ll="ls -la" >> .bashrc \
+    && source .bashrc
 
-EXPOSE 1022
+EXPOSE 1022 80 443 6379 3306
 
 ENTRYPOINT ["/usr/sbin/sshd","-D"]
