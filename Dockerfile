@@ -17,8 +17,7 @@ RUN set -ex \
     && echo "root:123456" | chpasswd \
     && sed -i 's/#Port 22/Port 1022/' /etc/ssh/sshd_config \
     && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
-    && echo alias ll='ls -la' >> .bashrc \
-    && sources /root/.bashrc
+    && echo alias ll='ls -la' >> .bashrc
 
 EXPOSE 1022
 
